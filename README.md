@@ -148,4 +148,4 @@ For any client supporting MCP via Stdio (Standard Input/Output), the configurati
 
 ## 🚀 Conclusion
 
-I've built a private, local, and highly specific search engine for my coding assistant. By leveraging MCP, we've decoupled the "knowledge" from the "model", allowing us to swap models or upgrade our documentation without breaking the workflow.
+I've built a private, local, and highly specific search engine for my coding assistant. By leveraging MCP, I've decoupled the "knowledge" from the "model", allowing us to swap models or upgrade our documentation without breaking the workflow.
