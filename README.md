@@ -10,9 +10,9 @@ Before we dive into the code, let's clarify the three pillars of this project:
 
 1.  **MCP (Model Context Protocol):** Think of this as a universal USB-C port for AI. It's an open standard that allows AI models (like Claude or Gemini) to connect to external tools and data sources without custom integrations for every single app. We are building a "Server" that exposes a tool to search documentation.
 2.  **RAG (Retrieval-Augmented Generation):** LLMs are frozen in time. They don't know about the specific version of Astro you are using or the latest React patterns. RAG allows us to _retrieve_ relevant snippets of documentation based on your query and _augment_ the AI's prompt with that context.
-3.  **Local Embeddings:** Instead of paying for OpenAI's API to turn text into numbers (vectors), we are running a small, efficient model locally on your CPU. Privacy-first and free!
+3.  **Local Embeddings:** Instead of paying for your favourite LLM API to turn text into numbers (vectors), we are running a small, efficient model locally on your CPU. Privacy-first and free!
 
-## Hz The Toolbox: Libraries Used
+## 🧰 The Toolbox: Libraries Used
 
 We are standing on the shoulders of giants here. Here is the stack:
 
@@ -32,7 +32,7 @@ We are standing on the shoulders of giants here. Here is the stack:
 The project is split into four distinct parts:
 
 1.  **Database Layer (`database.js`)**: Handles the connection to LanceDB and loads the embedding model.
-2.  **Refresher (`refresh.js`)**: A CLI tool that downloads fresh documentation from GitHub.
+2.  **Refresher (`refresh.js`)**: A CLI tool that downloads fresh documentation from the libraries's pages. Astro is mandatory, but others are optional.
 3.  **Ingestion (`ingest.js`)**: Processes markdown files into vectors.
 4.  **The Server (`index.js`)**: The MCP server that listens for requests from your AI agent.
 
@@ -83,12 +83,14 @@ When the AI calls this tool, we convert the user's question into a vector and as
 
 ## 🔄 How to Refresh the Data
 
-Documentation changes fast. I built a robust CLI tool in `refresh.js` to handle this.
+Documentation changes fast, so I've built a robust CLI tool in `refresh.js` to handle this.
 
 To update your knowledge base:
 
 ```bash
 node dist/refresh.js
+#or
+npm run refresh
 ```
 
 **What happens under the hood:**
@@ -146,6 +148,4 @@ For any client supporting MCP via Stdio (Standard Input/Output), the configurati
 
 ## 🚀 Conclusion
 
-We've built a private, local, and highly specific search engine for our coding assistant. By leveraging MCP, we've decoupled the "knowledge" from the "model," allowing us to swap models or upgrade our documentation without breaking the workflow.
-
-Happy coding!
+I've built a private, local, and highly specific search engine for my coding assistant. By leveraging MCP, we've decoupled the "knowledge" from the "model", allowing us to swap models or upgrade our documentation without breaking the workflow.
