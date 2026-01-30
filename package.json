@@ -1,0 +1,39 @@
+{
+  "name": "astro-knowledge-mcp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "ingest": "tsx src/ingest.ts",
+    "dev": "tsx src/index.ts",
+    "refresh": "tsx src/refresh.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lancedb/lancedb": "^0.23.0",
+    "@modelcontextprotocol/sdk": "^1.25.3",
+    "@types/fs-extra": "^11.0.4",
+    "@xenova/transformers": "^2.17.2",
+    "apache-arrow": "^18.1.0",
+    "chalk": "^5.6.2",
+    "execa": "^9.6.1",
+    "fs-extra": "^11.3.3",
+    "glob": "^13.0.0",
+    "gray-matter": "^4.0.3",
+    "inquirer": "^13.2.1",
+    "onnxruntime-node": "^1.23.2",
+    "ora": "^9.1.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

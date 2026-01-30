@@ -1,0 +1,7 @@
+node_modules
+temp_tailwind
+temp_react
+temp_typescript
+dist
+data
+docs
